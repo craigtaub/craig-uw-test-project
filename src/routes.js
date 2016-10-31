@@ -2,7 +2,7 @@ const setupPrometheus = require('./setupPrometheus');
 const setName = require('./middleware/setName');
 
 function initialiseRoutes(app) {
-  const prometheusMiddleware = setupPrometheus(app);
+  const prometheusMiddleware = setupPrometheus();
 
   app.use(
     prometheusMiddleware.requestDuration('http_request_seconds')
@@ -10,8 +10,8 @@ function initialiseRoutes(app) {
 
   app.get('/',
     setName,
-    function (request, response) {
-      response.send('Hello there ' + response.locals.name);
+    (request, response) => {
+      response.send(`Hello there ${response.locals.name}`);
     }
   );
 
