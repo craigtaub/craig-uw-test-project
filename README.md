@@ -6,7 +6,7 @@
 
 ## Prometheus client
 
-    docker run -p 9090:9090 -d -v /Users/ctaub/Documents/code/craig-uw-test-project/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus -config.file=/etc/prometheus/prometheus.yml
+    docker run -p 9090:9090 -d -v /<this-dir>/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus -config.file=/etc/prometheus/prometheus.yml
 
 ## Grafana client (http://localhost:3001/dashboard/db/prometheus-stats)
 
